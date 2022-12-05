@@ -4,9 +4,10 @@ import Main from "./components/Main";
 import Header from "./components/Header";
 
 function App() {
-  const weatherApiKey = "e58b2ab94045442a89f95504220512";
+  const apiKey = "0c183950ab4549da8fb115413220512";
 
   const [searchInput, setSearchInput] = useState("");
+  const [weatherhData, setWeatherData] = useState([]);
 
   const getSearchInput = (input) => {
     let searchInput = input;
@@ -15,19 +16,23 @@ function App() {
 
   useEffect(() => {
     fetch(
-      `https://api.weatherapi.com/v1/search.json?key=${weatherApiKey}&q=${searchInput}&aqi=no`
+      `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${searchInput}&aqi=no`
     )
       .then((response) => {
         return response.json();
       })
-      .then((data) => {});
-  }, []);
+      .then((data) => {
+        setWeatherData(data);
+        console.log(searchInput);
+        console.log(weatherhData);
+      });
+  }, [searchInput]);
 
   return (
     <>
       <div className="app-container">
         <Header getSearchInput={getSearchInput} />
-        <Main searchInput={searchInput} />
+        <Main weatherhData={weatherhData} />
       </div>
     </>
   );
