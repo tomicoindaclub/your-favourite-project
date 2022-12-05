@@ -1,7 +1,7 @@
 import React from "react";
 
-function Main({ cityName }) {
-  return <div>{cityName}</div>;
+function Main({ searchInput }) {
+  return <div>{searchInput}</div>;
 }
 
 export default Main;

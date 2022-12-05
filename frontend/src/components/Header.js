@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Logo from "./Logo.js";
 
-function Header({ getCityName }) {
+function Header({ getSearchInput }) {
   const [input, setInput] = useState("");
 
-  const handleClick = (e) => {
+  const getInput = (e) => {
     e.preventDefault();
-    getCityName(input);
+    getSearchInput(input);
   };
 
   return (
@@ -21,7 +21,7 @@ function Header({ getCityName }) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
-          <button onClick={handleClick}>KERESS</button>
+          <button onClick={getInput}>KERESS</button>
         </div>
       </header>
     </>
