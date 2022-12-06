@@ -1,14 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Logo from "./Logo.js";
 
-function Header({ getSearchInput }) {
-  const [input, setInput] = useState("");
-
-  const getInput = (e) => {
-    e.preventDefault();
-    getSearchInput(input);
-  };
-
+function Header({ searchInput, setSearchInput }) {
   return (
     <>
       <header>
@@ -16,12 +9,11 @@ function Header({ getSearchInput }) {
         <div className="search-bar">
           <input
             type="text"
-            name="filter"
-            id="filter"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
+            name="search"
+            id="search"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
           />
-          <button onClick={getInput}>KERESS</button>
         </div>
       </header>
     </>
