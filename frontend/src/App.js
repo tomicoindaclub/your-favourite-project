@@ -4,7 +4,7 @@ import Main from "./components/Main";
 import Header from "./components/Header";
 
 function App() {
-  const apiKey = "0c183950ab4549da8fb115413220512";
+/*   const apiKey = "0c183950ab4549da8fb115413220512";
   // const imageApiKey =
   //   "563492ad6f917000010000019fe6895bc4de4b2f816d02c64408d69f";
 
@@ -55,7 +55,7 @@ function App() {
         <Main weatherhData={weatherhData} />
       </div>
     </>
-  );
+  ); */
 }
 
 export default App;
