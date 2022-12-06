@@ -18,10 +18,16 @@ function App() {
         `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${searchInput}`
       )
         .then((response) => {
+          if (!response.ok) {
+            throw Error("Could not fetch :(");
+          }
           return response.json();
         })
         .then((data) => {
           setWeatherData(data);
+        })
+        .catch((err) => {
+          console.log(err.message);
         });
     }
   }, [searchInput]);
