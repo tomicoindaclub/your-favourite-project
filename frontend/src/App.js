@@ -24,7 +24,9 @@ function App() {
           setWeatherData(data);
         });
     }
+  }, [searchInput]);
 
+  useEffect(() => {
     if (weatherData?.location?.name) {
       fetch(
         `https://api.pexels.com/v1/search?query=${weatherData.location.name}&per_page=1`,
@@ -43,7 +45,7 @@ function App() {
           setImageData(data);
         });
     }
-  }, [searchInput]);
+  }, [weatherData]);
 
   return (
     <>
