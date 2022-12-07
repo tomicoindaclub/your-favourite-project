@@ -299,3 +299,11 @@ hr {
 .hidden {
   display: none;
 }
+
+.Option {
+  border: 1px solid gainsboro;
+  width: 200px;
+  height: 10px;
+  margin-bottom: 1px;
+  cursor: pointer;
+}
