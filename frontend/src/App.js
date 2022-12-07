@@ -55,7 +55,7 @@ function App() {
 
   return (
     <>
-      <div className="app-container">
+      <div className="container">
         <Header setSearchInput={setSearchInput} searchInput={searchInput} />
         <Main weatherData={weatherData} imageData={imageData} />
       </div>

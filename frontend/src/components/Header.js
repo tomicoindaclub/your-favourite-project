@@ -1,11 +1,13 @@
 import React from "react";
-import Logo from "./Logo.js";
 
 function Header({ searchInput, setSearchInput }) {
   return (
     <>
       <header>
-        <Logo />
+        <div className="titleApp">
+          <div className="logo"></div>
+          <h1>Weather App</h1>
+        </div>
         <div className="search-bar">
           <input
             type="text"
