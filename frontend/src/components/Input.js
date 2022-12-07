@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import AutoComplete from './AutoComplete';
 
 
 function Input() {
@@ -37,17 +38,17 @@ function Input() {
     console.log(currentData)
     console.log(autoComp)
   return (
-    
+     <>
     <div>
         <div>
             <input type="text" name="seacrh" onChange={handleChange} value={search} />
 
             <button onClick={handleClick}>seacrh</button>
 
-
-            {autoComp[0] ? <option>{autoComp[0].name}</option> : null}
-            {autoComp[1] ? <option>{autoComp[1].name}</option> : null}
-            {autoComp[2] ? <option>{autoComp[2].name}</option> : null}
+            <div>
+             {autoComp.length > 0 && autoComp.map((autoC) => <AutoComplete name={autoC.name} setSearch={setSearch} setAutoComp={setAutoComp}/> )}
+        </div>  
+       
 
 
             {currentData.location ? <h1>{currentData.location.name}</h1> : null}
@@ -61,6 +62,8 @@ function Input() {
            
         </div>
     </div>
+
+    </>
   )
 }
 
