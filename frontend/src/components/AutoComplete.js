@@ -1,12 +1,12 @@
 import React from 'react'
-
+import './AutoComplete.css'
 
 
 
 function AutoComplete({name,setSearch,setAutoComp}) {
   return (
     <div>
-        <option value={name} onClick={(e) => {
+        <option className='Option' value={name} onClick={(e) => {
            setSearch(e.target.value)
            setAutoComp([])
         }}>{name}</option>
