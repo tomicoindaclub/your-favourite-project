@@ -38,7 +38,7 @@ function Main({ weatherData, imageData }) {
                 <p className="humidity">{weatherData.current.humidity}%</p>
                 <hr />
                 <p className="info-title">Air pressure</p>
-                <p className="pressure">{weatherData.current.pressure_in}</p>
+                <p className="pressure">{weatherData.current.pressure_in} in</p>
                 <hr />
                 <p className="info-title">UV:</p>
                 <p className="uv">{weatherData.current.uv}</p>

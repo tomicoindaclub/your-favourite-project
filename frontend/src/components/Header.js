@@ -28,18 +28,20 @@ function Header({ setSearchOutput }) {
             id="search"
             placeholder="Write a city here..."
             value={searchInput}
+            list="autocomplete"
             onChange={(e) => setSearchInput(e.target.value)}
           />
-        </div>
-        <div>
-          {autoComplete.length > 0 &&
-            autoComplete.map((autoC) => (
-              <AutoComplete
-                name={autoC.name}
-                setSearchOutput={setSearchOutput}
-                setAutoComplete={setAutoComplete}
-              />
-            ))}
+          <datalist id="autocomplete">
+            {autoComplete.length > 0 &&
+              autoComplete.map((autoC) => (
+                <AutoComplete
+                  name={autoC.name}
+                  setSearchOutput={setSearchOutput}
+                  setAutoComplete={setAutoComplete}
+                />
+              ))}
+          </datalist>
+          <button onClick={() => setSearchOutput(searchInput)}></button>
         </div>
       </header>
     </>
